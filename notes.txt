@@ -1,0 +1,40 @@
+#FrontEnd
+1. React JS
+
+#BackEnd 
+1. Python
+2. Django
+
+#DATABASE
+1. SQLite
+
+Steps:
+1. Build back end
+2. Create rest api end points
+3. Use react to create front end
+
+
+Keypoints:
+1. routing
+
+**MAJOR STEPS**
+	**1. Step-1**
+		i. Install required software
+			1. Code editor (VS Code, Sublime etc)
+			2. Python (for back end) (check python version >> python --version for linux)
+			4. Postman (for testing REST Api)
+			5. SQLite Studio (for database testing and management)
+			6. nodejs ()
+		ii. Install Django, Nodejs, npm, 
+			Django Command >> pip install django
+			Nodejs Command >> (sudo apt install curl >> curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&sudo apt-get install -y nodejs >> )
+		iii. Install Necessary Modules
+			1. REST API >>> pip install djangorestframework
+			2. Unblocking domain request >>> pip install django-cors-headers
+			3. 
+			
+			
+			
+			
+
+
