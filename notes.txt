@@ -31,7 +31,23 @@ Keypoints:
 		iii. Install Necessary Modules
 			1. REST API >>> pip install djangorestframework
 			2. Unblocking domain request >>> pip install django-cors-headers
-			3. 
+	2. **STEP-2**
+		i. Create EmployeeApp >> python manage.py startapp EmployeeApp
+		ii. Register App modules in settings.py (project level) , >> 'rest_framework', 'corsheaders', 'EmployeeApp.apps.EmployeeappConfig'
+		iii. Add corsheaders to middleware >>'corsheaders.middleware.CorsMiddleWare'
+		iv. Add the line above midlleware list >> CORS_ORIGIN_ALLOW = True
+	3. **STEP-3**
+		1. Create Models for database 
+			i. models >> Departments, Employees
+			ii. Add fields to the models.
+				Departments >> Department_ID, Department_Name
+				Employees >> Employee_ID, Employee_Name, Employee_Dept, Employee_DOJ, Employee_PHOTO
+		2. Make migrations for the models
+			'python manage.py makemigrations EmployeeApp'
+			'python manage.py migrate'
+		3. Cross check your database modes in SQLite Studio
+		4.  Create Serializers for our models
+			What it is: Serializers are **used to convert complex data types, such as Django model instances, into Python data types that can be easily rendered into JSON, XML, or other content types**. Serializers also provide deserialization, allowing parsed data to be converted back into complex types after first validating the incoming data.
 			
 			
 			
