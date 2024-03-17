@@ -38,7 +38,15 @@ def departmentAPI(request, id=0):
         
         return JsonResponse("Failed to update.")
     
+
+    elif request.method=="DELETE":
+        department = Departments.objects.get(Department_Id=id)
+        department.delete()
+
+        return JsonResponse("Deleted Successfully", safe=False)
     
+    
+
 
 
 
