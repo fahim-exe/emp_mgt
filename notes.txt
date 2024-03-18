@@ -1,0 +1,88 @@
+#FrontEnd
+1. React JS
+
+#BackEnd 
+1. Python
+2. Django
+
+#DATABASE
+1. SQLite
+
+Steps:
+1. Build back end
+2. Create rest api end points
+3. Use react to create front end
+
+
+Keypoints:
+1. routing
+
+**MAJOR STEPS**
+
+
+**BACK END
+	**1. Step-1**
+		i. Install required software
+			1. Code editor (VS Code, Sublime etc)
+			2. Python (for back end) (check python version >> python --version for linux)
+			4. Postman (for testing REST Api)
+			5. SQLite Studio (for database testing and management)
+			6. nodejs ()
+		ii. Install Django, Nodejs, npm, 
+			Django Command >> pip install django
+			Nodejs Command >> (sudo apt install curl >> curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&sudo apt-get install -y nodejs >> )
+		iii. Install Necessary Modules
+			1. REST API >>> pip install djangorestframework
+			2. Unblocking domain request >>> pip install django-cors-headers
+	2. **STEP-2**
+		i. Create EmployeeApp >> python manage.py startapp EmployeeApp
+		ii. Register App modules in settings.py (project level) , >> 'rest_framework', 'corsheaders', 'EmployeeApp.apps.EmployeeappConfig'
+		iii. Add corsheaders to middleware >>'corsheaders.middleware.CorsMiddleWare'
+		iv. Add the line above midlleware list >> CORS_ORIGIN_ALLOW = True
+	3. **STEP-3**
+		1. Create Models for database 
+			i. models >> Departments, Employees
+			ii. Add fields to the models.
+				Departments >> Department_ID, Department_Name
+				Employees >> Employee_ID, Employee_Name, Employee_Dept, Employee_DOJ, Employee_PHOTO
+		2. Make migrations for the models
+			'python manage.py makemigrations EmployeeApp'
+			'python manage.py migrate'
+		3. Cross check your database modes in SQLite Studio
+		4.  Create Serializers for our models
+			What it is: Serializers are **used to convert complex data types, such as Django model instances, into Python data types that can be easily rendered into JSON, XML, or other content types**. Serializers also provide deserialization, allowing parsed data to be converted back into complex types after first validating the incoming data.
+		5. Start writing API Methods
+			1. import >> from django.views.decorators.csrf import csrf_exempt (CSRF_exempt is use When I use the Post method and I want skip the CSRF token for the post method. this is usually **use when testing the API**. If you add @csrf_exempt to the top of your view, then you are basically telling the view that it doesn't need the token.)
+			2. import >> from rest_framework.parser import JSONParser(Interface JsonParser. **Provides forward, read-only access to JSON data in a streaming way**. This is the most efficient way for reading JSON data. The class Json contains methods to create parsers from input sources ( InputStream and Reader ).)
+			3. import necessary modules
+				from django.http.response import JsonResponse
+				from EmployeeApp.models import Departments, Employees
+				from EmployeeApp.serializer import DepartmentSerializers, EmployeeSerializers
+				from EmployeeApp.models import Departments, Employees
+				from EmployeeApp.serializer import DepartmentSerializers, EmployeeSerializers
+			4. Create func for department's API (def departmentAPI)
+				1. If we want to see the all the record in the department we will check "GET" method in the request
+				2. If we want to add new data into the records we will check "POST" method in the request
+				3. If we want to update the data in the record we will check "PUT" method in the request
+				4. If we want to delete the data in the record we will check "DELETE" method in the request
+		6. **Routing The URLS with urls.py**
+			i. create urls.py in app directory
+			ii. route paths so that we can use the models and api through the views
+		7. **Create API Method for Employee and route it in the same way as Departments
+		8. Check if api is working or not (basically will output the json in the browser), we used postman to test api
+		9. If every requests(GET, POST, PUT, DELETE) for Department and Employee works we now build our front end
+
+**FRONT END
+	1.  Check if the system has npx/npm available >> 'npx -v'
+	2. Create the react app >> 'npx create-react-app app_name'
+	3. Change directory to app name >> 'cd app_name'
+	4. Run react local server >> 'npm start'
+	5. Add bootstrap library
+	6. Add routing for the app >> 'npm install react-router-dom'
+		
+			
+			
+			
+			
+
+
